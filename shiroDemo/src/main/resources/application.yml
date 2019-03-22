@@ -1,0 +1,8 @@
+#数据库配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/mysql?useUnicode=true&amp;characterEncoding=utf-8
+    username: root
+    password: root
