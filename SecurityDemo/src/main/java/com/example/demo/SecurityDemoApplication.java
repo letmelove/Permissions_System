@@ -3,7 +3,7 @@ package com.example.demo;
 import java.util.List;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+//import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PostFilter;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 //支持自动配置。像有时引入了spring data jpa 但却没有配置数据源的时候就可以@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 //使用role验证。有此注解@PreAuthorize注解才会生效
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityDemoApplication {
