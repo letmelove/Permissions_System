@@ -7,7 +7,7 @@
         <id column="uid" property="uid"/>
         <result column="username" property="username"/>
         <result column="password" property="password"/>
-        <collection property="roles" ofType="com.shiro.shiroDemo.model.Role">
+        <collection property="role" ofType="com.shiro.shiroDemo.model.Role">
             <id property="rid" column="rid" />
             <result column="rname" property="rname"/>
             <collection property="permissions" ofType="com.shiro.shiroDemo.model.Permissions">
@@ -20,7 +20,13 @@
     </resultMap>
 
 
-    <select id="findByUsername" parameterType="string" resultType="userMap">
-
+    <select id="findByUsername" parameterType="string" resultMap="userMap">
+		select u.*, r.*, p.*
+		from user u
+			inner join user_role ur on ur.uid = u.uid
+			inner join role r on r.rid = ur.rid
+			inner join permission_role pr on pr.rid = r.rid
+			inner join permission p on pr.pid = p.pid
+		where u.username = #{username}
     </select>
 </mapper>

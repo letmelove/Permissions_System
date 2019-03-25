@@ -1,11 +1,14 @@
 #数据库配置
 spring:
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3307/shirodemo?useUnicode=true&amp;characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3307/shirodemo?characterEncoding=utf8&useSSL=true&serverTimezone=UTC
     username: root
     password: root
+  mvc:
+    view:
+      prefix: /pages/
+      suffix: .jsp
 
 #mybatis
 mybatis:
