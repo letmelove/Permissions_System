@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3307
+Source Server         : mysql5.7
 Source Server Version : 50723
 Source Host           : localhost:3307
 Source Database       : shirodemo
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2019-03-24 20:44:52
+Date: 2019-03-25 17:19:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -54,7 +54,6 @@ INSERT INTO `permission_role` VALUES ('1', '3');
 INSERT INTO `permission_role` VALUES ('1', '4');
 INSERT INTO `permission_role` VALUES ('2', '1');
 INSERT INTO `permission_role` VALUES ('2', '2');
-INSERT INTO `permission_role` VALUES ('2', '3');
 INSERT INTO `permission_role` VALUES ('2', '4');
 
 -- ----------------------------
@@ -96,9 +95,9 @@ INSERT INTO `user` VALUES ('2', 'demo', '123');
 DROP TABLE IF EXISTS `user_role`;
 CREATE TABLE `user_role` (
   `uid` int(11) NOT NULL,
-  `pid` int(11) NOT NULL,
+  `rid` int(11) NOT NULL,
   KEY `idx_uid` (`uid`),
-  KEY `idx_pid` (`pid`)
+  KEY `idx_pid` (`rid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
